@@ -13,9 +13,13 @@ const routes = [
         component: Dashboard
     },
     {
-        path: '/images',
+        path: '/images/:id/:name',
         name: 'images',
         component: Images
+    },
+    {
+        path:'**',
+        redirect: '/'
     }
 ]
 

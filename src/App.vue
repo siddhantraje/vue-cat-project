@@ -2,13 +2,14 @@
   <v-app>
     <Header />
     <v-content>
-      <Dashboard />
+      <!-- <Dashboard /> -->
+      <router-view></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import Dashboard from './components/Dashboard'
+// import Dashboard from './components/Dashboard'
 import Header from './components/Header'
 // import Images from './components/Images'
 
@@ -16,7 +17,7 @@ export default {
   name: 'App',
 
   components: {
-    Dashboard,
+    // Dashboard,
     Header,
     // Images
   },

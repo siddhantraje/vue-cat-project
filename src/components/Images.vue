@@ -23,7 +23,12 @@ export default {
     },
     computed: mapGetters(['catsUsingCategory', 'errCatsUsingCategory']),
     created(){
-        this.fetchCatsUsingCategory({id:14, limit:10});
+        this.fetchCatsUsingCategory({id:this.$route.params.id, limit:10});
+    },
+    watch: {
+        '$route.params.id': function(id){
+            this.fetchCatsUsingCategory({id:id, limit:10});
+        }
     }
 
 }

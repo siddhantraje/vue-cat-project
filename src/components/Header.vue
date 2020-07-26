@@ -1,6 +1,6 @@
 <template>
 <div>
-    <v-app-bar color="deep-purple" dark>
+    <v-app-bar color="primary">
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
     </v-app-bar>
 
@@ -8,14 +8,22 @@
         <v-list nav dense>
             <v-list-item-group active-class="deep-purple--text text--accent-4">
             <v-list-item>
-                <v-list-item-title>Dashboard</v-list-item-title>
+                <router-link to="/" style="text-decoration: none; color: inherit;">
+                <v-list-item-title>
+                    Dashboard
+                    </v-list-item-title>
+                    </router-link>
             </v-list-item>
             <v-list-group>
                 <template v-slot:activator>
                 <v-list-item-title>Images</v-list-item-title>
                 </template>
                             <v-list-item  v-for="category in categories" :key="category.id">
-                                <v-list-item-title class="text-capitalize">{{category.name}}</v-list-item-title>
+                                <router-link :to="{ name: 'images', params: { id:category.id, name: category.name } }" style="text-decoration: none; color: inherit;">
+                                <v-list-item-title class="text-capitalize">                                    
+                                    {{category.name}}
+                                </v-list-item-title>
+                                </router-link>
                             </v-list-item>
             </v-list-group>
             </v-list-item-group>
